@@ -1,0 +1,299 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+*{
+    box-sizing: border-box;
+      border: 1px solid transparent;
+}
+
+body{ 
+    background: #4143A3;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #1E1E45, #4143A3, #848FD8,#CFD5EE,#ECEDF9);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #1E1E45, #4143A3, #848FD8,#CFD5EE,#ECEDF9);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #1E1E45, #4143A3, #848FD8,#CFD5EE,#ECEDF9);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient( to bottom right, #1E1E45, #4143A3, #848FD8,#CFD5EE,#ECEDF9);
+    /* Standard syntax */
+    height:100vh;
+    color: #fff;
+}
+ .sidebar3
+{padding-top:30px;
+padding-left:30px;
+padding-right:0px;}
+.logo
+{ 
+float:left;
+}
+ .logo > img
+{
+  box-shadow:0 0 0 1px #848FD8, 0 0 0 5px #1E1E45, 0 0 0 6px #848FD8,  -2px -2px 0 6px #00bcd4;
+  border:1px;
+  border-radius:100%;
+  padding:5px;
+
+} 
+.name
+{ float:right;
+  clear:right;
+  padding:5px;
+  height: 74px;
+  vertical-align: middle;
+  padding-top:20px;
+  text-align:right;
+}
+.name > p
+{
+  margin-bottom: 0px;
+}
+i {
+  display: inline-block;
+  margin-right: 1em;
+}
+/* li
+{
+  list-style-type: none;
+  padding:5px;
+  border-bottom:1px solid #848FD8;
+} */
+ul{padding-left:0px;}
+.activebooks
+{
+border:1px solid #848FD8;
+padding:0px 10px;
+margin-top:-2px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+
+}
+.dropdown .fa-plus
+{ border:1px solid #848FD8;
+padding:4px;
+margin-top:-2px;
+margin-right:0px;
+}
+
+.list
+{
+  padding-left:20px;
+}
+.dropdown
+{
+  margin-left:-15px;
+}
+.submenu > li
+{ display:list-item;
+list-style-type: square;
+
+}
+.submenu{
+  padding-left:12px;
+}
+.submenu > li:hover
+{
+  color:blue;
+}
+.category::before, .category::after, .submenu::after
+{
+  content:" ";
+  white-space:pre;
+}
+i.fa.fa-circle-thin
+{
+  color:#00ff74;
+}
+li:hover{
+  background-color:rgba(255, 255, 255, 0.25);
+  cursor:pointer;
+}
+.main-content
+{ text-align: right;
+}
+.main-content > p > a
+{color: white;}
+</style>
+
+<head>
+   
+    <link media="all" type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+
+<div class="container-fluid" data-ng-controller="picuploadcontroller" >
+        <div class="row" class="row overflownone">
+        
+            <div class="col-md-3 col-sm-4 sidebar3">
+
+                 <div class="media-left">
+                              <br>
+                              <img data-ng-src="http://localhost:9980/FrondEnd/images/{{currentuser.username}}.jpg" onerror="this.src='http://localhost:9980/FrondEnd/images/user.png" style="width:160px;height:160px">
+                              <form method="POST" enctype="multipart/form-data" action="http://localhost:9980/MiddleWare/user/up">
+                
+                    <input type="file" name="uploadedFile" value="Profile pic">
+                
+                    <input type="submit" value="UPLOAD">
+             </form>
+                              </div>
+
+                <div class="name">
+                     <h2>{{currentuser.first_name}}  {{currentuser.last_name}}</h2>
+                           <!--  <h2>{{currentuser.email_id}}</h2> -->
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-3 col-sm-4 sidebar3">
+            <div class="overlay-id3 overlay-item">
+                <div class="left-navigation">
+                    <ul>
+                       <li><i class="fa fa-rss" aria-hidden="true"></i><a href="#!myblogmanage"><font color="white">My BLOGS</font></a></li>
+                        <li><i class="material-icons" style="font-size:15px">forum</i><a href="#!forum"><font color="white">FORUMS</font> <span class="activebooks pull-right"></span></li>
+                        <li><a href="#!applyjob"><font color="white"> <span class="glyphicon">&#xe139;</span>&nbsp&nbsp&nbsp APPLY JOBS</a></font></li>
+                        <li><i class="fa fa-users" aria-hidden="true"></i><a href="#!userlist"><font color="white">SUGGEST FRIENDS</font></a></li>
+                          <li><i class="fa fa-users" aria-hidden="true"></i><a href="#!friends"><font color="white">FRIENDS</font></a></li>
+                         <li><i class="material-icons" style="font-size:15px">forum</i><a href="#!myforums"><font color="white">MY FORUM</font></a></li>
+               </ul>
+                           
+                           
+                                      </div>
+            </div>
+            </div>
+                    </div>
+    </div>
+    
+    
+    <script>
+    ;(function($){ 
+    	   $(document).ready(function() {
+    	    $('.information_menu').find('li').hover(function(e) {
+    	         $('.information_menu').find('li').removeClass('active');
+    	        $(this).addClass('active');
+    	        $(".overlay-item").removeClass("active");
+    	        $(".overlay-item").removeClass("inactive");
+    			$(".overlay-id"+$(this).data("id")).addClass("active").removeClass("inactive");
+    	        
+    	         $(".overlay-id"+$(this).data("id")).prev().addClass("inactive")
+    	    });     
+    		
+    	    $('.slideshow').children().on('mouseleave',function(e) {
+    			$(this).removeClass("active");
+    		});    
+    	    
+    	    $('.carousel').carousel();
+    	   });
+    	})(jQuery);
+
+    
+    </script>
+    
+    
+    
+<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%; 
+}
+
+@media (max-width:768px)
+{
+    
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%; 
+}
+}
+</style>
+
+
+<div class="row"  id="cover">
+     <div class="col-md-11">
+    
+    <div class="media">
+                              <div class="media-left">
+                              <br>
+                              <img data-ng-src="http://localhost:9980/Frontend/images/{{currentuser.image}}" onerror="this.src='http://localhost:9980/FrontEnd/images/user.png" style="width:100px;height:100px">
+                              <form method="POST" enctype="multipart/form-data" action="http://localhost:9980/MiddleWare/user/up">
+                  
+                    <input type="file" name="uploadedFile" value="Profile pic">
+                
+                    <input type="submit" value="UPLOAD">
+             </form>
+                              </div>
+                                    
+                              <div class="media-right" style="margin-left:100px">
+                              
+                              
+                              <h2>{{currentuser.firstname}}   {{currentuser.lastname}}</h2>
+                            <h2>{{currentuser.email_id}}</h2>
+                            <b>Edit details</b>
+                            
+                                            <form method="POST" enctype="multipart/form-data" action="http://localhost:9980/MiddleWare/user/upcover">
+              
+                    <input type="file" name="uploadedFile" value="cover image">
+           
+                    <input type="submit" value="UPLOAD">
+             </form>
+                            
+                              </div>
+                              
+                              
+                              </div>
+            
+    </div>
+    </div>
+
+<div class="container">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1>Eli Macy</h1>
+            <p>Girls just wanna go fun.</p>
+        </div>
+        
+        <h4>Select files from your computer</h4>
+          <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+            <div class="form-inline">
+              
+                <span class="btn btn-success fileinput-button">
+                   
+                    <input type="file" name="files[]" multiple>
+                     <button type="button" class="btn btn-primary start" data-ng-click="submit()">
+                    <i class="glyphicon glyphicon-upload"></i>
+                            <button type="reset" class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    
+                </button>
+                </button>
+                </span>
+        
+                       
+            
+            </div>
+          </form>
+    </div>
+</div> /container   -->

@@ -1,0 +1,45 @@
+<div data-ng-controller="friendrequestcontroller">
+
+<div class="card card-1" style="margin-top:25px;margin-right: 25px;margin-left: 25px" >
+
+	<div class="panel panel-primary">
+					<div class="panel-heading">
+						<b><h3 class="panel-title"><center>Requests</center></h3></b>
+					</div>
+    </div>
+ 
+  
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><center><strong>First Name</strong></center></th>
+              <th><center><strong>Last Name</strong></center></th>
+              <th><center><strong>Place</strong></center></th> 
+              <th><center><strong>Username</strong></center></th>
+              <th><center><strong>Action</strong></center></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+         
+            <tr data-ng-repeat="fre in myfriendreqs">
+            <td><center>{{fre.first_name}}</center></td>
+              <td><center>{{fre.last_name}}</center></td>
+              <td><center>{{fre.place}}</center></td>
+              <td><center>{{fre.username}}</center></td>
+              <td><center><a class="btn-group"> <a data-ng-click="acceptfriend(fre.userid)" ><img data-ng-src="http://localhost:9980/FrondEnd/images/approve.png" style="width:20px;height:20px"></a></div> 
+                        <a class="btn-group"> <a data-ng-click="rejectfriend(fre.userid)"><img data-ng-src="http://localhost:9980/FrondEnd/images/reject.png" style="width:20px;height:20px"></a></center></td>
+
+            </tr>
+          </tbody>
+          <tfoot>
+            
+          </tfoot>
+        </table>
+        </div>
+ 
+ 
+ 
+ </div>
+
+</div>

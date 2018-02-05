@@ -1,0 +1,45 @@
+<div data-ng-controller="friendcontroller">
+
+<div class="card card-1" style="margin-top:25px;margin-right: 25px;margin-left: 25px" >
+
+	<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><center><b>Friends List</b></center></h3></b>
+					</div>
+    </div>
+ 
+    
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+             <th><center><strong>Image</strong></center></th>
+              <th><center><strong>First Name</strong></center></th>
+              <th><center><strong>Last Name</strong></center></th>
+              <th><center><strong>Place</strong></center></th> 
+              <th><center><strong>Username</strong></center></th>
+             <th><center><strong>Action</strong></center></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+         
+            <tr data-ng-repeat="fr in myfriends">
+            <td><center> <a style="color: white" href="#!myprofile"><img data-ng-src="images/{{fr.username}}.jpg" onerror="this.src='images/user.png'" class="img-circle" height="40" width="40"></center></a>
+           <td> <center>{{fr.first_name}}</center></td>
+              <td><center>{{fr.last_name}}</center></td>
+             <td> <center>{{fr.place}}</center></td>
+              <td><center>{{fr.username}}</center></td>
+           <td><center><button type="button" class="btn btn-primary" data-ng-click=unfriend(fr.userid)>Unfriend</button></center></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            
+          </tfoot>
+        </table>
+        </div>
+ 
+ 
+ 
+ </div>
+
+</div>

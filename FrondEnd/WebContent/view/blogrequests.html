@@ -1,0 +1,69 @@
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+
+<div class="container">
+<div class="row">
+<div  class="col-md-12" >
+  <div class="panel panel-primary panel-table animated slideInDown">
+   <div class="panel-heading ">
+   <div class="row">
+       
+        <div class="col col-xs-5 text-center">
+           <center> <h1 class="panel-title">BLOG REQUESTS</h1></center>
+        </div>
+       
+        </div>
+    </div>
+   <div class="panel-body">
+     <div class="tab-content" data-ng-controller="blogrequestcontroller">
+      <div role="tabpanel" class="tab-pane active" id="list">
+<!-- <h4>BLOG REQUESTS</h4>
+<div data-ng-controller="blogrequestcontroller">
+
+<div class="card card-1" style="margin-top:25px;margin-right: 25px;margin-left: 25px"> -->
+ <table class="table table-striped table-bordered table-list">
+        <thead>
+          <tr>
+              <th>NAME</th>
+              <th>BLOGNAME</th>
+              
+              <th></th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr  data-ng-repeat="blogreq in blogequests">
+            <td>{{blogreq.username}}</td>
+            <td>{{blogreq.blogname}}</td>
+           
+            <td>   <a data-ng-click="acceptblogrequests(blogreq.blogid)"  ><img data-ng-src="http://localhost:9980/FrondEnd/images/approve.png" style="width:20px;height:20px"></a></td>
+                      <td>  <a data-ng-click="rejectblogrequests(blogreq.blogid)"  ><img data-ng-src="http://localhost:9980/FrondEnd/images/reject.png" style="width:20px;height:20px"></a> </td>
+                                <td>   <a data-ng-click="maximum(blogreq.blogid)"  ><img data-ng-src="http://localhost:9980/FrondEnd/images/view.png" style="width:20px;height:20px"></a> </td>
+          
+          </tr>
+       
+        </tbody>
+      </table>
+ 
+ 
+ 
+ 
+ </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

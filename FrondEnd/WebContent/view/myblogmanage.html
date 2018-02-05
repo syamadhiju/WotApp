@@ -1,0 +1,78 @@
+
+
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<div>
+<center><h1>MY BLOGS</h1></center>
+</div>
+
+<h4>BLOG MANAGE</h4>
+<div data-ng-controller="blogcontroller">
+<div class="card card-1" style="margin-top:15vh">
+  <div class="row">
+    <div class="col s12">
+     
+    </div>
+    <div id="test1" class="col s12">
+      <div class="card card-1" style="margin-top:2vh;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px">
+    	<table class="table">
+		
+		<tr >
+			<td><b>BLOG NAME</b></td>
+			<td> <b>USER NAME</b></td>
+            <td><b>BLOG CONTENT</b> </td>
+             <td><b>VIEW</b> </td>
+              <td><b>DELETE</b> </td>
+               <td><b>UPDATE</b> </td>
+                <td><b>NOW STATUS</b> </td>
+               
+
+<td></td>
+			
+		
+		</tr>
+		<tr  data-ng-repeat="blog in myblogs">
+			<td> {{blog.blogname}} </td>
+			<td>{{blog.username}}</td>
+			<td>{{blog.blogcontent}}</td>
+<td> <a  data-ng-click="maximum(blog.blogid)"><img data-ng-src="http://localhost:9980/FrondEnd/images/view.png" style="width:20px;height:20px"></a> </td>
+<td>       <div  data-ng-show="currentuser.role=='ROLE_USER'"><a href="" data-ng-click=deleteBlog(blog.blogid)><img data-ng-src="http://localhost:9980/FrondEnd/images/reject.png" style="width:20px;height:20px"></a></div></td>
+<td>       <div  data-ng-show="currentuser.role=='ROLE_USER'"><a href="" data-ng-click=fetchforedit(blog.blogid)><img data-ng-src="http://localhost:9980/FrondEnd/images/edit.ico" style="width:20px;height:20px"></a></div></td>
+<td>{{blog.status}}</td>
+</tr>
+</table>
+    	 
+	</div>
+
+    </div>
+    </div>
+  
+                </div>
+            </div>
+    
+        
+        
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+       
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+     
+</script>

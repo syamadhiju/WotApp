@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title><style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<style>
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 8px 0; 
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #34ca78; 
+    color: #fff; 
+}
+.nav-sidebar .active a:hover {
+    background-color: #37D980;   
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+article h2{color:#333333;}
+h2{color:#34ca78;}
+ .margin10{margin-bottom:10px; margin-right:10px;}
+
+
+</style>
+ <body>
+<div class="container" data-ng-controller="blogcontroller">
+<br><br>
+  
+  
+  <br><br>
+<center><h2>Blog View</h2></center>
+  
+    
+     <div class="col-md-10 blogShort"  >
+                    <h3>{{gblog.blogname}} </h3>
+                    
+                     <article>
+                     <p>
+                        {{gblog.blogcontent}} 
+                     </p>
+                    
+                     
+                     
+                     </article>
+                 <a class="btn btn-md" href="" data-ng-click="likeBlog(gblog.blogid)" ><img data-ng-src="http://localhost:9980/FrondEnd/images/like.png" style="width:20px;height:20px"></a> {{gblog.likes}}
+                <a class="btn btn-md" href="" data-ng-click="dislikeBlog(gblog.blogid)" > <img data-ng-src="http://localhost:9980/FrondEnd/images/dislike.png" style="width:20px;height:20px"> </a>{{gblog.dislike}}  
+                 <img data-ng-src="http://localhost:9980/FrondEnd/images/views.png" style="width:20px;height:20px"> {{gblog.views}}</h4>
+                 </div>
+	
+  <!-- the comment box -->
+                <div class="well"  >
+                    <h4><i class="fa fa-paper-plane-o"></i> </h4>
+                    <form role="form"  data-ng-submit="addBlogComment()" >
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" data-ng-model="BlogComments.blogcomm" placeholder="comments type here"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
+                    </form>
+                </div>
+                  </div>   
+<script src="https://apis.google.com/js/plusone.js">
+</script>
+                <hr>
+
+                <!-- the comments -->
+                <div  data-ng-repeat="comm in gblogcomm">
+                <h3><span class="glyphicon glyphicon-user" style="font-size:20px"></span> {{comm.username}} </h3>
+               
+               
+                <p><i class="material-icons" style="font-size:15px">comment</i>{{comm.blogcomm}}</p>
+               
+</div>
+                
+        
+
+ 
+</body>
+</html>

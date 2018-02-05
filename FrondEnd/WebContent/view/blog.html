@@ -1,0 +1,149 @@
+<style>
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 8px 0; 
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #34ca78; 
+    color: #fff; 
+}
+.nav-sidebar .active a:hover {
+    background-color: #37D980;   
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+ h2{color:#34ca78;}
+ .margin10{margin-bottom:10px; margin-right:10px;}
+</style>
+<div class="container">
+	 <div id="blog" class="row" data-ng-controller="blogcontroller"> 
+                
+                 
+                 <div class="col-md-10 blogShort"  data-ng-repeat="gb in blogs">
+                     <h1>{{gb.blogname}}</h1>
+                  <div class="list-group-item-heading">
+                                        <a href="#" title="sintret">
+                                            <small><font color="black" size="3"><span class="glyphicon glyphicon-user" style="font-size:20px"></span> <b><u><i>{{gb.username}}</i></u></b></font></small>
+                                        </a>
+                                    </div>
+                        
+                     
+                   <b> <p>
+                        {{gb.blogcontent}} 
+                         </p></b>
+                        
+                     <a class="btn btn-blog pull-right marginBottom10" href="" data-ng-click="maximum(gb.blogid)">READ MORE</a> 
+                 </div>
+                 
+                 
+               <div class="col-md-12 gap10"></div>
+             </div>
+</div>
+
+
+
+<!-- <style>
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.row-section{float:left; width:100%; background: #A569BD  ;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #A569BD  , #A569BD  );  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #A569BD    , #A569BD  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.row-section h2{float:left; width:100%; color:#A569BD  ; margin-bottom:30px; font-size: 14px;}
+.row-section h2 span{font-family: 'Libre Baskerville', serif; display:block; font-size:45px; text-transform:none; margin-bottom:20px; margin-top:30px;font-weight:700;}
+.row-section h2 a{color:#A569BD  ;}
+.row-section .row-block{background:#A569BD  ; padding:20px; margin-bottom:50px;}
+.row-section .row-block ul{margin:0; padding:0;}
+.row-section .row-block ul li{list-style:none; margin-bottom:20px;}
+.row-section .row-block ul li:last-child{margin-bottom:0;}
+.row-section .row-block ul li:hover{cursor:grabbing;}
+.row-section .row-block .media{border:1px solid #d5dbdd; padding:5px 20px; border-radius: 5px; box-shadow:0px 2px 1px rgba(0,0,0,0.04); background:#cfff90;}
+.row-section .media .media-left img{width:75px;}
+.row-section .media .media-body p{padding: 0 15px; font-size:14px;}
+.row-section .media .media-body h4 {color: #A569BD  ; font-size: 18px; font-weight: 600; margin-bottom: 0; padding-left: 14px; margin-top:12px;}
+.btn-default{background:#A569BD  ; color:#cfff90; border-radius:30px; border:none; font-size:16px;}
+
+</style>
+<section class="row-section">
+<div class="blog">
+    <div class="container" data-ng-controller="blogcontroller">
+  
+           
+            <div class="row" >
+                 <div class="col-lg-6 col-lg-offset-3 text-center">  
+                    <h1><span class="ion-minus"></span><font color="white"><b><u>Blog Posts</u></b></font><span class="ion-minus"></span></h1><br>
+                  
+                 </div> 
+            </div>  
+                
+           <div class="row">
+			
+			    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-aos="fade-right"  data-ng-repeat="gb in blogs">
+				
+                   
+					
+					<div class="col-lg-6 col-xs-12">
+						 <div class="blog-column">
+							<span><font color="white"><b><i><u>{{gb.blogname}}</u></i></b></font></span><br>
+							 <ul class="blog-detail list-inline"> 
+								<li><font color="white"><i class="fa fa-user"></i><font color="white">{{gb.username}}</font></li> 
+								
+							</ul> 
+							<p><font color="white">{{gb.blogcontent}}</font></p>
+							<a href="" data-ng-click="maximum(gb.blogid)"><font color="black">Read More</font></a>
+						</div>
+					</div>
+				<br><br>
+                </div>
+				
+			
+                </div>
+			
+			</div>
+            
+    </div>
+</div></section>
+
+
+
+ <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+<script	  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script> -->

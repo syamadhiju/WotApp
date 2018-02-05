@@ -1,0 +1,62 @@
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+
+<div data-ng-controller="userrequestcontroller">
+
+<div class="card card-1" style="margin-top:25px;margin-right: 25px;margin-left: 25px">
+
+	<div class="panel panel-primary">
+					<div class="panel-heading">
+						<b><h3 class="panel-title"><center>Users Requests</center></h3></b>
+					</div>
+    </div>
+ <table class="table table-bordred table-striped">
+        <thead>
+          <tr>
+              <b><th>First Name</th></b>
+                <b><th>Last Name</th></b>
+                  <b><th>Gender</th></b>
+                    <b><th>Phone.no</th></b>
+                      <b><th>Email</th></b>
+                      <b><th>A/R</th></b>
+                      
+                      
+              
+              
+              <th></th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr  data-ng-repeat="userreq in userrequests">
+            <td>{{userreq.first_name}}</td>
+            <td> {{userreq.last_name}}</td>
+             <td>{{userreq.gender}}</td>
+              <td>{{userreq.phoneno}} </td>
+            <td>{{userreq.email_id}}</td>
+           
+           
+            <td>  <div class="btn-group"> <a data-ng-click="acceptuserrequests(userreq.email_id)"  class="btn btn-primary">ACCEPT</a></div> </td>
+                     <td>  <div class="btn-group"> <a data-ng-click="rejectuserrequests(userreq.email_id)"  class="btn btn-primary">REJECT</a></div> </td>
+         
+          </tr>
+       
+        </tbody>
+      </table>
+ 
+ 
+ 
+ 
+ </div>
+
+</div>

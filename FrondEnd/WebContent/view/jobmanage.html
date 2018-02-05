@@ -1,0 +1,142 @@
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+
+<center><h2>JOB MANAGE</h2></center>
+<div class="card card-1" style="margin-top:5vh;margin-left:50px;margin-right: 50px;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#!job"><font color="red">VIEW</font></a></li>
+        <li class="tab col s3"><a class="active" href="#!newjob"><font color="red">ADD JOB</font></a></li>
+        
+      </ul>
+    </div>
+    <div id="jobview" class="col s12">
+    <div data-ng-controller="jobcontroller">
+    	
+    	<div class="card card-1" style="margin-top:5vh;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px">
+    	
+    	 <table class="table">
+<tr>
+<td><b>JOB NAME</b> </td>
+<td> <b> JOB DESCRIPTION </b>  </td>
+<td> <b> JOB QUALIFICATION </b> </td>
+<td> <b> SALARY  </b></td>
+<td> <b> COMPANY </b> </td>
+<td> <b> ACTION </b> </td>
+<td></td>
+
+</tr>
+<tr data-ng-repeat="jobb in jobsdata">
+<td>{{jobb.jobprofile}} </td>
+<td>  {{jobb.jobdesc}}</td>
+<td> {{jobb.qualification}} </td>
+<td>{{jobb.salary}} </td>
+<td>  {{jobb.company}}</td>
+<!-- <td>  <a href="" data-ng-click="getjob(jobb.jobid)"><img data-ng-src="http://localhost:9980/FrondEnd/images/view.png" style="width:20px;height:20px">VIEW</a></td> -->
+<td>       <div  data-ng-show="currentuser.role=='ROLE_ADMIN'"><a href="" data-ng-click=deletejob(jobb.jobid)><img data-ng-src="http://localhost:9980/FrondEnd/images/reject.png" style="width:20px;height:20px"><font color="red">DELETE</font></a></div></td>
+<td>       <div  data-ng-show="currentuser.role=='ROLE_ADMIN'"><a href="" data-ng-click=fetchjobforedit(jobb.jobid)><img data-ng-src="http://localhost:9980/FrondEnd/images/edit.ico" style="width:20px;height:20px"><font color="red">EDIT</font></a></div></td>
+</tr>
+</table>
+    	 
+	</div>
+
+    </div>
+    </div>
+   <!--  <div id="newjob" class="col s12">
+    
+    <div class="row">
+     
+        <div class="col m12">
+        <div class="card card-1" style="margin-top:5vh;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px">
+            
+            <div class="row">
+            <div data-ng-controller="jobcontroller">
+                <form class="col s12" data-ng-submit="insertJobs()" >
+                   
+                           <div class="input-field col s6">  
+                           <div class="left-align">       
+                <input  type="text" id="jobprofile"  data-ng-model="Job.jobprofile" required >
+                            <label for="jobprofile">Job Profile</label>
+                             </div>
+                         </div>  
+                 
+                               <div class="input-field col s12">
+                   <textarea id="jobdesc" class="materialize-textarea" data-ng-model="Job.jobdesc" required></textarea>
+          <label for="jobdesc">Job Description</label>
+            </div>
+            
+            <div class="input-field col s12">
+                   <textarea id="jobqualifications" class="materialize-textarea" data-ng-model="Job.qualification" required></textarea>
+          <label for="jobqualifications">Job Qualifications</label>
+            </div>
+                              <div class="input-field col s6">  
+                             
+                <input  type="number" id="jobsalary"  data-ng-model="Job.salary" required >
+                            <label for="jobsalary">Job Salary</label>
+                         
+                         </div>
+                         
+                                <div class="input-field col s6">  
+                             
+                <input  type="text" id="company"  data-ng-model="Job.company" required >
+                            <label for="company">Company</label>
+                         
+                         </div>      
+                   
+                      <div class="input-field col s12">
+                   <textarea id="companydesc" class="materialize-textarea" data-ng-model="Job.companydesc" required></textarea>
+          <label for="jobqualifications">Company Description</label>
+            </div>
+                    
+                       <div class="input-field col s6">
+                            <p class="right-align">
+                                <button class="btn btn-large waves-effect waves-light" type="submit" >SUBMIT</button>
+                            </p>
+                        </div>
+                   
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    	
+    	
+    	
+    	
+	</div>
+    
+    </div>
+   
+  </div>
+        
+   </div>      -->
+        
+        
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+       
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+     
+</script>

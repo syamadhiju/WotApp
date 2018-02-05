@@ -1,0 +1,54 @@
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<div data-ng-controller="forumcontroller">
+
+<div class="card card-1" style="margin-top:25px;margin-right: 25px;margin-left: 25px" >
+
+	<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><center><b>MyForums</b></center></h3></b>
+					</div>
+    </div>
+ 
+    
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+            <th><center><strong>Forum ID</strong></center></th>
+              <th><center><strong>Forum Name</strong></center></th>
+              <th><center><strong>Forum Content</strong></center></th>
+              <th><center><strong>Action</strong></center></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+         
+            <tr data-ng-repeat="f in myforum">
+          <td> <center>{{f.forumid}}</center></td>
+           <td> <center>{{f.formname}}</center></td>
+              <td><center>{{f.formcontent}}</center></td>
+          <td> <div class="media-right align-self-center" >  
+	                <a href="" data-ng-click="fetchforumbyid(f.forumid)"><font color="black">ReadMore</font></a><td>
+	           </div> 
+            </tr>
+          </tbody>
+          <tfoot>
+            
+          </tfoot>
+        </table>
+        </div>
+ 
+ 
+ 
+ </div>
+
+</div>

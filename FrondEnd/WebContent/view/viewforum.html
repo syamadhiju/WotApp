@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<style>
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 8px 0; 
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #34ca78; 
+    color: #fff; 
+}
+.nav-sidebar .active a:hover {
+    background-color: #37D980;   
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+article h2{color:#333333;}
+h2{color:#34ca78;}
+ .margin10{margin-bottom:10px; margin-right:10px;}
+
+
+</style>
+<body>
+<div class="container" data-ng-controller="forumcontroller">
+<br><br>
+  
+  
+  <br><br>
+<center><h2>Forum View</h2></center>
+  
+    
+     <div class="col-md-10 blogShort"  >
+                    <h3>{{ForumByid.formname}} </h3>
+                    
+                     <article>
+                     <p>
+                        {{ForumByid.formcontent}} 
+                     </p>
+                    
+                     
+                     
+                     </article>
+                
+                 </div>
+	
+  <!-- the comment box -->
+                <div class="well"  >
+                 <!-- <div  data-ng-show="currentuser.role=='ROLE_ADMIN' || currentuser.role=='ROLE_USER' ">
+                   <div class="post-footer-comment-wrapper">
+                      
+                       <div class="comment">
+                            <div class="media">
+                              
+                              <div class="media-body">
+                               
+                              <div  data-ng-if="fcheck.length > 0">
+                   <div data-ng-repeat="f in fcheck">
+                   <div data-ng-show="f.status=='A'"> -->
+                
+                    <h4><i class="fa fa-paper-plane-o"></i> </h4>
+                    <form role="form"  data-ng-submit="addForumComment()" >
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" data-ng-model="ForumComments.forumcomm" placeholder="comments type here"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
+                    </form>
+                </div>
+                  </div>  
+                
+<script src="https://apis.google.com/js/plusone.js">
+</script>
+                <hr>
+
+                <!-- the comments -->
+                <div  data-ng-repeat="com in gforumcomm">
+                <h3><b><span class="glyphicon glyphicon-user" style="font-size:20px"></span>{{com.username}} </b></h3>
+                  
+               
+                <p><i class="material-icons" style="font-size:15px">comment</i>{{com.forumcomm}}</p>
+                
+             </div>
+                
+        
+
+ 
+</body>
+</html>

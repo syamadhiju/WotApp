@@ -1,0 +1,176 @@
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<style type="text/css">
+body
+{
+    background-image: url("images/jobs.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    background-attachment: fixed;
+}
+.table
+{
+    background-image: url("images/white.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    background-attachment: fixed;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus
+{
+    background-color: #0000b3;
+    border-color: #000;
+}
+</style>
+
+<body>
+	<h1 style="text-align: center; color: #0000b3"><strong>Available Jobs</strong></h1>
+	<div class="container" data-ng-controller="jobcontroller">
+		<div class="row" data-ng-repeat="j in jobsdata">
+			<div class="col-sm-12">
+				<table class="table" style="box-shadow: 5px 5px 5px #111; font: bold; color: black">
+					<tr style="font: bold;">
+						<td colspan="3"><h3><strong>{{j.jobprofile}}</strong></h3></td>
+					</tr>
+					<tr style="font: bold;">
+						<td>Organization: {{j.company}}</td>
+						<td>Job Description: {{j.jobdesc}}</td>
+					</tr>
+					<tr style="font: bold;">
+						<td>Salary: {{j.salary}}</td>
+						<td>Job Status: OPEN</td>
+						<td></td>
+					</tr>					
+					<tr style="font: bold;">
+						<td colspan="3">Description: {{j.companydesc}}</td>
+					</tr>
+					<tr>
+						<td colspan="3"><p style="text-align: right"><a href="" class="btn btn-primary btn-lg" data-ng-click="applyJob(j.jobid)">Apply Job</a></p>
+					</tr>
+				</table>
+			</div>
+		
+		</div>
+	</div>
+</body>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+.featured-jobs {
+	  padding: 70px 0px;
+	  background: #f2f0f1;
+	}
+	.featured-jobs .thumbnail {
+	  padding: 20px;
+	}
+	.featured-jobs .thumbnail img {
+	  float: left;
+	  margin: 0 10px 10px 0;
+	}
+	.featured-jobs .thumbnail .feature-link {
+	  color: #77c7dc;
+	}
+	.featured-jobs .thumbnail .feature-link h3 {
+	  padding-left: 10px;
+	  margin: 0 0 6px;
+	  font-size: 18px;
+	}
+	.featured-jobs .thumbnail .meta {
+	  color: #f16060;
+	  font-size: 11px;
+	}
+	.featured-jobs .thumbnail p {
+	  font-size: 12px;
+	  margin: 0 0 5px;
+	}
+	.featured-jobs .thumbnail .feature-btns {
+	  position: absolute;
+	  bottom: -13px;
+	  left: 15px;
+	}
+
+	@media only screen and (max-width: 1024px) {
+
+	.thumbnail { margin-bottom:50px; }
+
+	.featured-jobs .thumbnail .feature-btns { bottom:17px; }
+
+
+	    }
+
+	@media only screen and (max-width: 790px) {
+
+	.thumbnail { margin-bottom:50px; }
+
+	.featured-jobs .thumbnail .feature-btns { bottom:-33px; }
+
+	    }
+</script>
+</head>
+<body>
+<section class="featured-jobs">
+    <div class="container">
+		<div class="center-block"><h1>Featured Jobs</h1></div>
+		<div class="row"  data-ng-controller="jobcontroller">
+
+				first feature job
+				<div class="col-sm-6 col-md-4" data-ng-repeat="gjob in jobsdata">
+				
+				<div class="col-sm-12">
+				<table class="table" style="box-shadow: 5px 5px 5px #111; font: bold; color: black">
+					<tr style="font: bold;">
+						<td colspan="3"><h3><strong>{{gjob.jobprofile}}</strong></h3></td>
+					</tr>
+					<tr style="font: bold;">
+						<td>Qualification: {{gjob.qualification}}</td>
+						<td>Description: {{gjob.jobdesc}}</td>
+						<td>Salary: {{gjob.salary}}</td>
+						<td>Company: {{gjob.company}}</td>
+					
+					</tr>
+					<tr>
+					<td> <button type="button" class="btn btn-primary" data-ng-click="applyJob(gjob.jobid)">APPLY</button></td><br>
+					</tr>
+					</table>
+					</div>
+					
+					
+						<div class="thumbnail">
+								<img data-src="holder.js/90x70" alt="advetiser logo">
+								<a href="" class="feature-link"><h3>{{gjob.jobprofile}}</h3></a>
+								<p> {{gjob.jobdesc}}</p>
+								<a href="" class="feature-link">{{gjob.qualification}}</a>
+								
+								
+								<div class="feature-btns"><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-file"></span> View Details</a> <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-star-empty"></span> Shortlist</a></div>
+						</div>
+					
+				</div>
+
+				
+			</div>
+		
+	</div>
+</section>
+
+</body>
+</html> -->

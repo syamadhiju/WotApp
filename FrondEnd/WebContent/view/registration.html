@@ -1,0 +1,129 @@
+
+
+<div data-ng-controller="registercontroller as us">
+    <form class="well form-horizontal" ng-submit="register()" method="post"  id="contact_form">
+        <fieldset>      
+
+            <!-- Form Name -->
+            <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">First Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input  name="first_name" placeholder="First Name" class="form-control" ng-model="User.first_name" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" >Last Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="last_name" placeholder="Last Name" class="form-control"  ng-model="User.last_name"type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Username</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input  name="user_name" placeholder="Username" class="form-control"  ng-model="User.username" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" >Password</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="user_password" placeholder="Password" class="form-control"  ng-model="User.password"type="password">
+                    </div>
+                </div>
+            </div>
+
+          
+              <!-- Text input-->
+
+            <div class="form-group">
+                 <label class="col-md-4 control-label">Gender</label>
+                  <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                    <div class="radio">
+						  <label><input type="radio" name="optradio" ng-model="User.gender" value="m">Male</label>
+				     </div>
+						<div class="radio">
+						  <label><input type="radio" name="optradio" ng-model="User.gender" value="f">Female</label>
+						</div>
+						<div class="radio disabled">
+						  <label><input type="radio" name="optradio" ng-model="User.gender" value="o"disabled>Others</label>
+						</div>
+              </div>
+              </div>
+              </div>
+              
+               <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Place</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input  name="place" placeholder="place" class="form-control"  ng-model="User.place" type="text">
+                    </div>
+                </div>
+            </div>
+              
+
+            <!-- radio input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="email_id" placeholder="E-Mail Address" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ng-model="User.email_id" type="text">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Contact No.</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="contact_no" placeholder="(+91)" class="form-control" ng-model="User.phoneno" type="text" pattern="[789][0-9]{9}">
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+   
+    </div>
+    

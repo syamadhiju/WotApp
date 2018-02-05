@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html data-ng-app = "myApp">
+<head>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body
+{
+    background-image: url("./images/a1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+<title>Welcome to WotApp</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  
+   <ul class="nav navbar-nav">
+      <li class="active"><a href="#"><h7><b><i>WotApp</i></b></h7></a></li>
+     
+       <li data-ng-show="currentuser.role=='ROLE_ADMIN'">
+       <div class="dropdown">
+       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">REQUESTS
+       <span class="caret"></span></button>
+       <ul class="dropdown-menu">
+       <li><a href="#!/blogrequests">BLOG</a></li>
+       <li><a href="#!/userrequests">USER</a></li>
+      <li><a href="#!/forumrequests">FORUM</a></li>
+       
+       </ul>
+       </div>
+       </li>
+
+       <li data-ng-show="currentuser.role=='ROLE_ADMIN'">
+       <div class="dropdown">
+       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">MANAGE
+       <span class="caret"></span></button>
+       <ul class="dropdown-menu">
+       <li><a href="#!/blogmanage">BLOG</a></li>
+       <li><a href="#!/jobmanage">JOBS</a></li>
+       <li><a href="#!newforum">ADD FORUM</a></li>
+        <li><a href="#!forummanage">FORUM MANAGE</a></li>
+       
+       </ul>
+       </div>
+       </li> 
+        
+      
+        <li class="dropdown" data-ng-show="currentuser.role=='ROLE_USER'"><a class="dropdown-toggle" data-toggle="dropdown" href="#">BLOGS<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!/newblog">ADD BLOGS</a></li>
+          <li><a href="#!/blog">VIEW BLOGS</a></li>
+          <li><a href="#!/myblogmanage">MY BLOGS</a></li>
+        </ul>
+      </li>
+ 
+     
+     
+        
+        
+    
+       
+   
+       
+        <li class="dropdown" data-ng-show="currentuser.role=='ROLE_USER'"><a class="dropdown-toggle" data-toggle="dropdown" href="#">JOB <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!/job"">VIEW JOBS</a></li>
+          <li><a href="#!/applyjob">Apply JOBS</a></li>
+          
+        </ul>
+      </li>
+        
+     
+      
+       
+       
+        
+         
+           <li class="dropdown" data-ng-show="currentuser.role=='ROLE_USER'"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FORUM<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!/forum">VIEW FORUM</a></li>
+         
+        </ul>
+      </li>
+     
+      
+       
+    <li data-ng-show="currentuser.username">
+				<a style="color: white" href="#!/userlist"><span class="glyphicon glyphicon-user"></span>SEARCH</a></li>
+	 
+      
+      
+       
+       </ul>
+       
+       
+     
+    <ul class="nav navbar-nav navbar-right">
+      <li data-ng-hide="currentuser.role=='ROLE_ADMIN' || currentuser.role=='ROLE_USER'">
+      <a style="color: white" href="#!registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      
+      <li data-ng-hide="currentuser.role=='ROLE_ADMIN' || currentuser.role=='ROLE_USER'">
+      <a style="color: white" href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      
+       
+      
+        <li data-ng-show="currentuser.role=='ROLE_USER'">
+      <a style="color: white" href="#!Chat"><i class="material-icons">&#xe0b7;</i></a></li>
+      
+     
+     <!--    <li data-ng-show="currentuser.role=='ROLE_USER'">
+      <a style="color: white" href="#!notification"><i class="material-icons">&#xe003;</i></a></li>
+       -->
+     
+        <li data-ng-show="currentuser.role=='ROLE_USER'">
+      <a style="color: white" href="#!friendrequest"><i class="material-icons">&#xe7fe;</i></a></li>
+      
+
+    
+      <li data-ng-show="currentuser.role=='ROLE_USER'">
+      <a style="color: white" href="#!myprofile"><img data-ng-src="images/{{currentuser.username}}.jpg" onerror="this.src='images/user.png'" class="img-circle" height="40" width="40"></a>
+      </li>
+       
+      
+         <li data-ng-show="currentuser.role=='ROLE_ADMIN'">
+        <li><div class="collapse navbar-collapse" id="collapse-example">
+                <ul class="nav navbar-nav ">
+                <li><a style="color: white" href=""> {{currentuser.username}}</a></li></ul>
+                </div></li>
+                
+      <li data-ng-show="currentuser.role=='ROLE_ADMIN' || currentuser.role=='ROLE_USER' ">
+       <a style="color: white" data-ng-click="logout()" data-ng-controller="logoutcontroller">Logout</a>
+       </li>
+       
+      
+      
+      
+       
+      <!--  
+        <li><div data-ng-show="currentuser.role=='ROLE_ADMIN' || currentuser.role=='ROLE_USER' ">
+      <a style="color: white" href=""  style="color: black">{{currentuser.email}}</a>  
+      </div> </li>
+       -->
+      
+     
+      </ul>
+      </div>
+     </nav>
+
+<div data-ng-view></div>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="./js/angular-cookies.js"></script>
+<script src="./js/angular-cookies.min.js"></script>
+ <!--    <script src="./js/sockjs.min.js"></script>
+<script src="./js/stomp.min.js"></script> -->
+<script src="./js/app.js"></script>
+<script src="./js/Usercontroller.js"></script>
+<script src="./js/JobController.js"></script>
+<script src="./js/BlogController.js"></script>
+<script src="./js/FriendController.js"></script>
+<script src="./js/ChatController.js"></script>
+<script src="./js/ChatService.js"></script>
+<script src="./js/NotificationController.js"></script>
+<script src="./js/ForumController.js"></script>
+</body>
+</html>

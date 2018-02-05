@@ -1,0 +1,70 @@
+<style>
+body
+{
+    background-image: url("./images/1.jpg");
+    background-repeat: no-repeat;
+	opacity:0.8;
+    background-size: 100%; 
+    padding-bottom: 75px;
+	background-attachment: fixed;
+}
+</style>
+
+
+
+
+
+<center><h2>BLOG MANAGE</h2></center>
+<div data-ng-controller="blogcontroller">
+<div class="card card-1" style="margin-top:15vh">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#!blog"><font color="red">VIEW</font></a></li>
+         <li class="tab col s3"><a href="#!newblog"><font color="red">ADD BLOG</font></a></li>
+       
+        
+      </ul>
+    </div>
+    <div id="test1" class="col s12">
+      <div class="card card-1" style="margin-top:2vh;padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px">
+    	<table class="table table-condensed table-hover">
+		
+		<tr >
+			<td class="tabco1"><b>BLOG NAME</b></td>
+			<td  class="tabco2"> <b>USER NAME</b></td>
+            <td class="tabco3"><b>BLOG CONTENT</b> </td>
+
+<td></td>
+			
+		
+		</tr>
+		<tr  data-ng-repeat="blog in blogs">
+			<td class="tabco1"> {{blog.blogname}} </td>
+			<td class="tabco2">{{blog.username}}</td>
+			<td class="tabco3">{{blog.blogcontent}}</td>
+			<td> <a  data-ng-click="maximum(blog.blogid)"><img data-ng-src="http://localhost:9980/FrondEnd/images/view.png" style="width:20px;height:20px"><font color="red">VIEW FULL</font></a> </td>
+			
+		</tr>
+
+	</table>
+	</div>
+    </div>
+ 
+   
+  </div>
+        
+   </div>     
+        
+        
+
+
+
+	
+</div>
+<script>
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+       
+</script>
