@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="0" failures="0" name="com.niit.BackEnd.BlogDAOTest" time="0" errors="0" skipped="0">
+<testsuite tests="13" failures="0" name="com.niit.BackEnd.BlogDAOTest" time="0.731" errors="0" skipped="13">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\project2nd\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7901813086536763800.tmp"/>
+    <property name="classworlds.conf" value="C:\project2nd\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6802484785400728589.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_131/bin/server;C:/Program Files/Java/jre1.8.0_131/bin;C:/Program Files/Java/jre1.8.0_131/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\apache-maven-3.5.2\bin;C:\Program Files\Java\jdk1.8.0_131;C:\Users\syama\AppData\Local\Microsoft\WindowsApps;;C:\Users\syama\Desktop;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,4 +61,43 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="addBlogTest" time="0.047">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="dislikeBlogTest" time="0.047">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="getAllBlogTest" time="0.047">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="likeBlogTest" time="0.047">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="addBlogComment" time="0.047">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="getBlogCommentTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="deleteBlogCommentTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="updateBlogTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="rejectBlogTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="approveBlogTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="updateBlogCommentTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="getblogTest" time="0.062">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.niit.BackEnd.BlogDAOTest" name="deleteBlogTest" time="0.062">
+    <skipped/>
+  </testcase>
 </testsuite>
